@@ -1,0 +1,27 @@
+body * {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: auto;
+}
+
+header {
+    width: 400px;
+}
+
+#main {
+    text-align: center;
+}
+
+.question-data {
+    text-align: right;
+    list-style: none;
+}
+
+#content-box {
+    width: 400px;
+    height: 500px;
+    padding: 10px;
+    border: gray 1px solid;
+    padding-top: 30%;
+}
+
