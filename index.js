@@ -49,16 +49,7 @@ function handleQuestion() {
 
 }
 
-function displayFeedback() {
-    //This function will be responsible for handling whether the feedback for the correct answer or the feedback for the incorrect answer is displayed
-        // let selectedAnswer = $('input:checked');
-        // let correctAnswer = STORE[questionIndex]["correctAnswer"];
-        // if (selectedAnswer === correctAnswer) {
-        //     $('#content-box').html(`<p>Hello world</p>`)
-        // }
-    $('#content-box').html(`<p>Feedback would be displayed here.</p>`)
-    console.log('`displayFeedback` ran');
-}
+
 
 function submitAnswer() {
     //This function will be responsible for submitting the answer
@@ -69,6 +60,17 @@ function submitAnswer() {
         displayFeedback();
     });
     console.log('`submitAnswer` ran');
+}
+
+function displayFeedback() {
+    //This function will be responsible for handling whether the feedback for the correct answer or the feedback for the incorrect answer is displayed
+        // let selectedAnswer = $('input:checked');
+        // let correctAnswer = STORE[questionIndex]["correctAnswer"];
+        // if (selectedAnswer === correctAnswer) {
+        //     $('#content-box').html(`<p>Hello world</p>`)
+        // }
+    $('#content-box').html(`<p>Feedback would be displayed here.</p>`)
+    console.log('`displayFeedback` ran');
 }
 
 function changeScore() {
