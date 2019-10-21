@@ -1,29 +1,84 @@
-function handleQuiz() {
-    displayQuestion();
-    displayFeedback();
-    changeScore();
-    showQuestionNumber();
-    endQuiz();
+"use strict";
+
+//These variables keep track of the question index and number
+let questionIndex = 0;
+let questionNumber = questionIndex + 1;
+
+function displayQuestion(item) {
+    //This function is responsible for displaying the question each time
+    console.log("Displaying the question");
+    return `
+    <section class="question-box">
+    <p class="instructions content">
+    Instructions: Select the definition that best describes the word below.
+    </p>
+    <h2 class="word content">${item[questionIndex]["question"]}</h2>
+    <section>
+        <h3>In a sentence:</h3>
+        <p class="sentence content">${item[questionIndex]["exampleSentence"]}<br>--${item[questionIndex]["exampleSource"]}</p>
+    </section>
+    <form id="question-form">
+        <ul class="answers content">
+            <li>
+                <input type="radio" id="answerA" name="answer" value="a"><label for="answerA">  ${item[questionIndex]["answerOptions"][0]}</label>
+            </li>
+            <li>
+                <input type="radio" id="answerB" name="answer" value="b"><label for="answerB">   ${item[questionIndex]["answerOptions"][1]}</label>
+            </li>
+            <li>
+                <input type="radio" id="answerC" name="answer" value="c"><label for="answerC">  ${item[questionIndex]["answerOptions"][2]}</label>
+            </li>
+            <li>
+            <input type="radio" id="answerD" name="answer" value="d"><label for="answerD">  ${item[questionIndex]["answerOptions"][3]}</label>
+            </li>
+        </ul>
+        <button type="submit" class="answer-submit">submit</button>
+    </form>
+    </section>`;
 }
 
-function displayQuestion() {
-    console.log('`displayQuestion` ran');
+function handleQuestion() {
+    //This function will be responsible for displaying the question, multiple choice answers, and example
+    $('#content-box').on('click', `.begin`, function() {
+        $('.quiz-description').remove();
+        $('.begin').remove();
+        const question = displayQuestion(STORE);
+        $('#content-box').html(question);
+        console.log('`handleQuestion` ran');
+    });
+
 }
 
 function displayFeedback() {
+    //This function will be responsible for displaying the feedback, right or wrong
+    $('#question-form').submit(event => {
+        event.preventDefault();
+        
+    });
     console.log('`displayFeedback` ran');
 }
 
 function changeScore() {
+    //This function will be responsible for changing the number of correct answers in the header
     console.log('`changeScore` ran');
 }
 
 function showQuestionNumber() {
+    //This function will be responsible for changing the number of the question in the header
     console.log('`showQuestionNumber` ran');
 }
 
 function endQuiz() {
+    //This function will be responsible for displaying end-of-quiz feedback and telling the user how to play again
     console.log('`endQuiz` ran');
+}
+
+function handleQuiz() {
+    handleQuestion();
+    displayFeedback();
+    changeScore();
+    showQuestionNumber();
+    endQuiz();
 }
 
 $(handleQuiz);

@@ -4,6 +4,19 @@ body * {
     margin: auto;
 }
 
+.begin {
+    border: 1px solid black;
+}
+
+.answer-submit {
+    border: 1px solid darkgray;
+}
+
+/*not currently using*/
+.hidden {
+    display: none;
+}
+
 header {
     width: 400px;
 }
@@ -17,11 +30,28 @@ header {
     list-style: none;
 }
 
+.answers {
+    list-style: none;
+    text-align: left;
+}
+
+.answers > li {
+    padding-bottom: 10px;
+}
+
 #content-box {
     width: 400px;
     height: 500px;
     padding: 10px;
     border: gray 1px solid;
+    padding-top: 10%;
+}
+
+.quiz-description {
     padding-top: 30%;
+}
+
+.instructions, .word, .sentence, .answers {
+    padding-bottom: 20px;
 }
 
