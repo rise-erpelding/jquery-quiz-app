@@ -4,12 +4,8 @@ body * {
     margin: auto;
 }
 
-.begin {
+.begin, .sbmt, .Next, .restart {
     border: 1px solid black;
-}
-
-.sbmt {
-    border: 1px solid darkgray;
 }
 
 /*not currently using*/
@@ -18,7 +14,7 @@ body * {
 }
 
 header {
-    width: 400px;
+    width: 300px;
 }
 
 #main {
@@ -27,11 +23,9 @@ header {
 
 .question-data {
     text-align: right;
-    list-style: none;
 }
 
 .answers {
-    list-style: none;
     text-align: left;
 }
 
@@ -40,7 +34,7 @@ header {
 }
 
 #content-box {
-    width: 400px;
+    width: 300px;
     height: 500px;
     padding: 10px;
     border: gray 1px solid;

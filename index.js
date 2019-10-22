@@ -1,5 +1,6 @@
 "USE STRICT";
 
+
 //These variables keep track of the question index and number
 let questionIndex = 0;
 let questionNumber = questionIndex + 1;
@@ -24,9 +25,6 @@ function submitAnswer() {
     $('#question-form').submit(function(event) {
         event.preventDefault();
         console.log("submit button is working");
-        // Delete 2 lines below
-        // $('.quiz-description').remove();
-        // $('.begin').remove();
         displayFeedback();
     });
     console.log('`submitAnswer` ran');
@@ -99,13 +97,16 @@ function displayFeedback() {
 function nextQuestion() {
     questionIndex ++;
     questionNumber ++;
-    $('#content-box').on('click', `.Next`, function() {
-        const question = displayQuestion(STORE);
-        $('#content-box').html(question);
-        submitAnswer();
-        console.log("The next button is working");
-    });
-    // displayQuestion(STORE);
+    if (questionIndex < STORE.length) {
+        $('#content-box').on('click', `.Next`, function() {
+            const question = displayQuestion(STORE);
+            $('#content-box').html(question);
+            submitAnswer();
+            console.log("The next button is working");
+        });
+    } else {
+        endQuiz();
+    }
     console.log('`nextQuestion` ran');
 }
 
@@ -114,19 +115,34 @@ function nextQuestion() {
 function changeScore() {
     //This function will be responsible for adding one point to the current score
     numberCorrect ++;
-    $('.your-score').replaceWith(numberCorrect);
+    $('.your-score').text(numberCorrect);
     console.log('`changeScore` ran');
 }
 
 function showQuestionNumber() {
     //This function will be responsible for changing the number of the question in the header
-    $('.question-number').replaceWith(questionNumber);
+    $('.question-number').text(questionNumber);
     console.log('`showQuestionNumber` ran');
 }
 
 function endQuiz() {
     //This function will be responsible for displaying end-of-quiz feedback and telling the user how to play again
+    $('#content-box').html(`<p>Your score is ${numberCorrect}/10</p><button class="restart">Start New Quiz</button>`);
     console.log('`endQuiz` ran');
+    restartQuiz();
+    return;
+}
+
+function restartQuiz() {
+    $('#content-box').on('click', `.restart`, function() {
+        questionIndex = 0;
+        questionNumber = questionIndex + 1;
+        numberCorrect = 0;
+        const question = displayQuestion(STORE);
+        $('#content-box').html(question);
+        submitAnswer();
+        console.log("restart button pushed");
+    });
 }
 
 function handleQuiz() {
