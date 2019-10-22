@@ -4,6 +4,30 @@
 let questionIndex = 0;
 let questionNumber = questionIndex + 1;
 
+function handleQuestion() {
+    //This function will be responsible for displaying the question, multiple choice answers, and example
+    $('#content-box').on('click', `.begin`, function() {
+        $('.quiz-description').remove();
+        $('.begin').remove();
+        const question = displayQuestion(STORE);
+        $('#content-box').html(question);
+        console.log('`handleQuestion` ran');
+    });
+
+}
+
+function submitAnswer() {
+    //This function will be responsible for submitting the answer
+    $('#question-form').submit(function(event) {
+        console.log("button is working");
+        event.preventDefault();
+        // $('.quiz-description').remove();
+        // $('.begin').remove();
+        displayFeedback();
+    });
+    console.log('`submitAnswer` ran');
+}
+
 function displayQuestion(item) {
     //This function is responsible for displaying the question each time
     console.log("Displaying the question");
@@ -37,30 +61,6 @@ function displayQuestion(item) {
     </section>`;
 }
 
-function handleQuestion() {
-    //This function will be responsible for displaying the question, multiple choice answers, and example
-    $('#content-box').on('click', `.begin`, function() {
-        $('.quiz-description').remove();
-        $('.begin').remove();
-        const question = displayQuestion(STORE);
-        $('#content-box').html(question);
-        console.log('`handleQuestion` ran');
-    });
-
-}
-
-
-
-function submitAnswer() {
-    //This function will be responsible for submitting the answer
-    $('#question-form').submit(function(event) {
-        event.preventDefault();
-        $('.quiz-description').remove();
-        $('.begin').remove();
-        displayFeedback();
-    });
-    console.log('`submitAnswer` ran');
-}
 
 function displayFeedback() {
     //This function will be responsible for handling whether the feedback for the correct answer or the feedback for the incorrect answer is displayed
@@ -89,6 +89,7 @@ function endQuiz() {
 }
 
 function handleQuiz() {
+
     handleQuestion();
     submitAnswer();
     changeScore();
