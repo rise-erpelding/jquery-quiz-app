@@ -69,13 +69,18 @@ function displayQuestion(item) {
 }
 
 function correctFeedback() {
-    $('#content-box').html(`<p>You picked the correct answer</p>`);
+    $('#content-box').html(`<p>You picked the correct answer</p><button class="Next">Next</button>`);
     console.log('`correctFeedback` ran');
+    changeScore();
+    nextQuestion();
+    //note to self: expand upon this to give better feedback later.
 }
 
 function incorrectFeedback() {
-    $('#content-box').html(`<p>You picked the wrong answer</p>`);
+    $('#content-box').html(`<p>You picked the wrong answer</p><button class="Next">Next</button>`);
     console.log('`incorrectFeedback` ran');
+    nextQuestion();
+    //note to self: expand upon this to give better feedback later.
 }
 
 function displayFeedback() {
@@ -91,10 +96,23 @@ function displayFeedback() {
     console.log('`displayFeedback` ran');
 }
 
+function nextQuestion() {
+    questionIndex += 1;
+    questionNumber += 1;
+    $('#content-box').on('click', `.Next`, function() {
+        handleQuestion();
+        console.log("The next button is working");
+    });
+    // displayQuestion(STORE);
+    console.log('`nextQuestion` ran');
+}
+
 
 
 function changeScore() {
-    //This function will be responsible for changing the number of correct answers in the header
+    //This function will be responsible for adding one point to the current score
+    numberCorrect += 1;
+    $('.your-score').replaceWith(numberCorrect);
     console.log('`changeScore` ran');
 }
 
@@ -110,11 +128,8 @@ function endQuiz() {
 }
 
 function handleQuiz() {
-
     handleQuestion();
-    changeScore();
-    showQuestionNumber();
-    endQuiz();
+ //   endQuiz();
 }
 
 $(handleQuiz);
