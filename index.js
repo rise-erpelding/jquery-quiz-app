@@ -97,10 +97,12 @@ function displayFeedback() {
 }
 
 function nextQuestion() {
-    questionIndex += 1;
-    questionNumber += 1;
+    questionIndex ++;
+    questionNumber ++;
     $('#content-box').on('click', `.Next`, function() {
-        handleQuestion();
+        const question = displayQuestion(STORE);
+        $('#content-box').html(question);
+        submitAnswer();
         console.log("The next button is working");
     });
     // displayQuestion(STORE);
@@ -111,7 +113,7 @@ function nextQuestion() {
 
 function changeScore() {
     //This function will be responsible for adding one point to the current score
-    numberCorrect += 1;
+    numberCorrect ++;
     $('.your-score').replaceWith(numberCorrect);
     console.log('`changeScore` ran');
 }
@@ -129,7 +131,6 @@ function endQuiz() {
 
 function handleQuiz() {
     handleQuestion();
- //   endQuiz();
 }
 
 $(handleQuiz);
