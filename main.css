@@ -1,11 +1,36 @@
+/* General styles: */
 body * {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     margin: auto;
+    color: white;
 }
 
+body {
+    background: black;
+    background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url(book.jpg);
+    background-position: 55%;
+}
+
+#main {
+    text-align: center;
+}
+
+ul, li {
+    list-style: none;
+}
+
+/* Button styles: */
 .begin, .sbmt, .Next, .restart {
     border: 1px solid black;
+    font-family: 'Reem Kufi', sans-serif;
+    text-transform: uppercase;
 }
 
 /*not currently using*/
@@ -13,12 +38,61 @@ body * {
     display: none;
 }
 
-header {
-    width: 300px;
+/* Question Number/Score styles */
+
+
+.question-data > li {
+    display: inline-block;
+    padding: 0px 20px 10px 20px;
 }
 
-#main {
+.question-number {
+    color: black;
+}
+
+.your-score {
+    color: black;
+}
+
+.out-of {
+    color: gray;
+    font-size: 13px;
+}
+
+/* Title styles */
+header {
+    width: 300px;
+    margin: 15px 10px 5px 10px;
+    font-size: 20px;
     text-align: center;
+}
+
+/* Start page styles: */
+.quiz-description {
+    padding-top: 30%;
+}
+
+/* content box styles: */
+.instructions, .word, .answers {
+    padding-bottom: 20px;
+}
+
+#content-box {
+    width: 300px;
+    height: 500px;
+    border: gray 1px solid;
+    padding-top: 10%;
+}
+
+/* Question content styles (words and answers) */
+.word {
+    font-family: 'Hind Guntur', sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.answers > li {
+    padding-bottom: 10px;
 }
 
 .question-data {
@@ -27,25 +101,46 @@ header {
 
 .answers {
     text-align: left;
+    margin: 10px 30px 10px 30px;
 }
 
-.answers > li {
-    padding-bottom: 10px;
+/* Instructions styles: */
+.instructions {
+    font-size: 13px;
+    text-align: left;
+    margin: 0px 20px 20px 20px;
 }
 
-#content-box {
-    width: 300px;
-    height: 500px;
-    padding: 10px;
-    border: gray 1px solid;
-    padding-top: 10%;
+
+/* Example sentence styles: */
+.example {
+    padding: 8px 10px 8px 20px;
+    margin: 8px 10px 20px 30px;
+    text-align: left;
+    font-size: 14px;
+    border-left: 3px solid black;
 }
 
-.quiz-description {
-    padding-top: 30%;
+.sentence:before {
+    content: '\201C';
+    color: gray;
 }
 
-.instructions, .word, .sentence, .answers {
-    padding-bottom: 20px;
+.sentence:after {
+    content: '\201D';
+    color: gray;
 }
+
+.in-a-sentence {
+    font-size: 13px;
+    text-align: left;
+    margin-left: 53px;
+}
+
+.source {
+    font-size: 12px;
+    color: gray;
+    float: right;
+}
+
 

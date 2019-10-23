@@ -14,7 +14,7 @@ const STORE = [
         'something that deviates from what is standard, normal, or expected',
    
         exampleSentence:
-        '“Those years were just an anomaly, historically speaking, the Commander said.',
+        'Those years were just an anomaly, historically speaking, the Commander said.',
 
         exampleSource: 
         'The Handmaid’s Tale'
@@ -34,7 +34,7 @@ const STORE = [
         'a harsh discordant mixture of sounds',
    
         exampleSentence:
-        '“Tyrion put his spurs to his horse and added one more voice to the cacophony, and the van surged forward.”',
+        'Tyrion put his spurs to his horse and added one more voice to the cacophony, and the van surged forward.',
 
         exampleSource: 
         'A Game of Thrones'
@@ -54,7 +54,7 @@ const STORE = [
         'a tension or clash resulting from the combination of two disharmonious or unsuitable elements',
    
         exampleSentence:
-        '“t’s doubtful that watching Nancy Drew get busy will be a deal-breaker for most people; a slap of cognitive dissonance for some, definitely.”',
+        'It’s doubtful that watching Nancy Drew get busy will be a deal-breaker for most people; a slap of cognitive dissonance for some, definitely.',
 
         exampleSource: 
         'Salon, October 8, 2019'
@@ -74,7 +74,7 @@ const STORE = [
         'a departure from what is normal, usual, or expected, typically one that is unwelcome',
    
         exampleSentence:
-        '“Supreme Court Justice Ruth Bader Ginsburg said Thursday that the current political climate will be seen as “an aberration” in U.S. history.”',
+        'Supreme Court Justice Ruth Bader Ginsburg said Thursday that the current political climate will be seen as “an aberration” in U.S. history.',
 
         exampleSource: 
         'Washington Times, October 3, 2019'
@@ -94,7 +94,7 @@ const STORE = [
         'cruel and bitter criticism',
    
         exampleSentence:
-        '“That isn’t an unfair or unlikely view of the world, but it’s a simplified one that ignores more significant issues, like virtual harassment and online vitriol.”',
+        'That isn’t an unfair or unlikely view of the world, but it’s a simplified one that ignores more significant issues, like virtual harassment and online vitriol.',
 
         exampleSource: 
         'The Verge, October 10, 2019'
@@ -114,7 +114,7 @@ const STORE = [
         'offense or annoyance',
    
         exampleSentence:
-        '“It seems that the chef she spoke with took umbrage not just with the request for a special, non-menu item, but also that they not be charged full price for the meal.”',
+        'It seems that the chef she spoke with took umbrage not just with the request for a special, non-menu item, but also that they not be charged full price for the meal.',
 
         exampleSource: 
         'Fox News, September 21, 2019'
@@ -134,7 +134,7 @@ const STORE = [
         'a beginner or novice',
    
         exampleSentence:
-        '“The first when I was a young tyro cutting my peripatetic teeth; the latter just 18 months ago, when a confirmed flounderer in the murky depths of middle age.”',
+        'The first when I was a young tyro cutting my peripatetic teeth; the latter just 18 months ago, when a confirmed flounderer in the murky depths of middle age.',
 
         exampleSource: 
         'The Guardian, June 21, 2019'
@@ -154,7 +154,7 @@ const STORE = [
         'a strong verbal or written attack on someone or something',
    
         exampleSentence:
-        '“Bloom’s cultural polemics were sharp-tongued and colourful, but his smile was warm and boyish.”',
+        'Bloom’s cultural polemics were sharp-tongued and colourful, but his smile was warm and boyish.',
 
         exampleSource: 
         'The Guardian, October 14, 2019'
@@ -174,7 +174,7 @@ const STORE = [
         'bring about abruptly',
    
         exampleSentence:
-        '“Davis describes the aftermath of his Paris tour in 1949 and 1950—the anguish of his return to the relentless racism of the United States—as precipitating his heroin addiction.”',
+        'Davis describes the aftermath of his Paris tour in 1949 and 1950—the anguish of his return to the relentless racism of the United States—as precipitating his heroin addiction.',
 
         exampleSource: 
         'The New Yorker, August 28, 2019'
@@ -194,7 +194,7 @@ const STORE = [
         'alternate or waver between different opinions or actions; be indecisive',
    
         exampleSentence:
-        '“The main opposition Labour Party is itself deeply split over Brexit, and appears to be vacillating about whether to launch a motion of no-confidence to try and bring Johnson down.”',
+        'The main opposition Labour Party is itself deeply split over Brexit, and appears to be vacillating about whether to launch a motion of no-confidence to try and bring Johnson down.',
 
         exampleSource: 
         'Reuters, September 24, 2019'

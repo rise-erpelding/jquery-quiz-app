@@ -41,9 +41,9 @@ function displayQuestion(item) {
     Instructions: Select the definition that best describes the word below.
     </p>
     <h2 class="word content">${item[questionIndex]["question"]}</h2>
-    <section>
-        <h3>In a sentence:</h3>
-        <p class="sentence content">${item[questionIndex]["exampleSentence"]}<br>--${item[questionIndex]["exampleSource"]}</p>
+    <h3 class="in-a-sentence">In a sentence:</h3>
+    <section class="example content">
+        <blockquote class="sentence content">${item[questionIndex]["exampleSentence"]}</blockquote><cite class="source content">${item[questionIndex]["exampleSource"]}</cite>
     </section>
     <form id="question-form">
         <ul class="answers content">
