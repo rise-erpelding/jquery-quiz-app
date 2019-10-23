@@ -2,12 +2,11 @@
 body * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    font-weight: 100;
     margin: auto;
-    color: white;
 }
 
 body {
+    color:#ccc;
     background: black;
     background-image: 
     linear-gradient(
@@ -28,9 +27,12 @@ ul, li {
 
 /* Button styles: */
 .begin, .sbmt, .Next, .restart {
-    border: 1px solid black;
+    border: 1px solid #4d4d4d;
     font-family: 'Reem Kufi', sans-serif;
     text-transform: uppercase;
+    background-color: 
+        fff;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 /*not currently using*/
@@ -43,7 +45,7 @@ ul, li {
 
 .question-data > li {
     display: inline-block;
-    padding: 0px 20px 10px 20px;
+    padding: 10px 20px 10px 20px;
 }
 
 .question-number {
@@ -62,37 +64,36 @@ ul, li {
 /* Title styles */
 header {
     width: 300px;
-    margin: 15px 10px 5px 10px;
+    padding: 15px 10px 10px 10px;
+    border-bottom: 1px solid #0d0d0d;
     font-size: 20px;
     text-align: center;
+    color: #8c8c8c;
 }
 
 /* Start page styles: */
 .quiz-description {
-    padding-top: 30%;
+    margin: 120px 20px 30px 20px;
 }
 
 /* content box styles: */
-.instructions, .word, .answers {
-    padding-bottom: 20px;
-}
 
 #content-box {
     width: 300px;
     height: 500px;
-    border: gray 1px solid;
-    padding-top: 10%;
 }
 
 /* Question content styles (words and answers) */
 .word {
-    font-family: 'Hind Guntur', sans-serif;
+    font-family: 'Reem Kufi', sans-serif;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 35px;
+    padding: 10px 10px 10px 10px;
 }
 
 .answers > li {
     padding-bottom: 10px;
+    color: #f2f2f2;
 }
 
 .question-data {
@@ -108,17 +109,18 @@ header {
 .instructions {
     font-size: 13px;
     text-align: left;
-    margin: 0px 20px 20px 20px;
+    margin: 10px 20px 10px 20px;
 }
 
 
 /* Example sentence styles: */
 .example {
-    padding: 8px 10px 8px 20px;
+    padding: 5px 10px 5px 10px;
     margin: 8px 10px 20px 30px;
     text-align: left;
     font-size: 14px;
-    border-left: 3px solid black;
+    color: #e6e6e6;
+    border-left: 3px solid #8c8c8c;
 }
 
 .sentence:before {
@@ -134,12 +136,13 @@ header {
 .in-a-sentence {
     font-size: 13px;
     text-align: left;
+    padding-top: 10px;
     margin-left: 53px;
 }
 
 .source {
-    font-size: 12px;
-    color: gray;
+    font-size: 13px;
+    color: #999;
     float: right;
 }
 

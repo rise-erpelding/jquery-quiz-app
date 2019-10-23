@@ -67,7 +67,7 @@ function displayQuestion(item) {
 }
 
 function correctFeedback() {
-    $('#content-box').html(`<p>You picked the correct answer</p><button class="Next">Next</button>`);
+    $('#content-box').html(`<h3>Correct.!</h3><p>${item[questionIndex]["question"]} is defined as ${item[questionIndex]["correctAnswer"]}.</p><button class="Next">Next</button>`);
     console.log('`correctFeedback` ran');
     changeScore();
     nextQuestion();
