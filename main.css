@@ -48,19 +48,6 @@ ul, li {
     padding: 10px 20px 10px 20px;
 }
 
-.question-number {
-    color: black;
-}
-
-.your-score {
-    color: black;
-}
-
-.out-of {
-    color: gray;
-    font-size: 13px;
-}
-
 /* Title styles */
 header {
     width: 300px;
@@ -146,4 +133,15 @@ header {
     float: right;
 }
 
+/* Feedback styles: */
+.capitalize {
+    text-transform: capitalize;
+}
 
+.correct-incorrect {
+    margin-top: 30px;
+}
+
+.feedback {
+    margin: 10px 10px 20px 10px;
+}

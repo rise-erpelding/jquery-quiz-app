@@ -67,7 +67,12 @@ function displayQuestion(item) {
 }
 
 function correctFeedback() {
-    $('#content-box').html(`<h3>Correct.!</h3><p>${item[questionIndex]["question"]} is defined as ${item[questionIndex]["correctAnswer"]}.</p><button class="Next">Next</button>`);
+    $('#content-box').html(`<h3 class="correct-incorrect">Correct!</h3><p class="feedback"><span class="capitalize">${STORE[questionIndex]["question"]}</span> is defined as ${STORE[questionIndex]["correctAnswer"]}.
+    
+    <h3 class="in-a-sentence">In a sentence:</h3>
+    <section class="example content">
+        <blockquote class="sentence content">${STORE[questionIndex]["exampleSentence"]}</blockquote><cite class="source content">${STORE[questionIndex]["exampleSource"]}</cite></p></section>
+    <button class="Next">Next</button>`);
     console.log('`correctFeedback` ran');
     changeScore();
     nextQuestion();
@@ -75,7 +80,12 @@ function correctFeedback() {
 }
 
 function incorrectFeedback() {
-    $('#content-box').html(`<p>You picked the wrong answer</p><button class="Next">Next</button>`);
+    $('#content-box').html(`<h3 class="correct-incorrect">Incorrect.</h3><p class="feedback"><span class="capitalize">${STORE[questionIndex]["question"]}</span> is defined as ${STORE[questionIndex]["correctAnswer"]}.
+    
+    <h3 class="in-a-sentence">In a sentence:</h3>
+    <section class="example content">
+        <blockquote class="sentence content">${STORE[questionIndex]["exampleSentence"]}</blockquote><cite class="source content">${STORE[questionIndex]["exampleSource"]}</cite></p></section>
+    <button class="Next">Next</button>`);
     console.log('`incorrectFeedback` ran');
     nextQuestion();
     //note to self: expand upon this to give better feedback later.
