@@ -5,6 +5,7 @@
 let questionIndex = 0;
 let questionNumber = questionIndex + 1;
 let numberCorrect = 0;
+let incorrectAnswers = [];
 
 function handleQuestion() {
     //This function will be responsible for displaying the question, multiple choice answers, and example, and submitting the answer
@@ -35,17 +36,20 @@ function displayQuestion(item) {
     //This function is responsible for displaying the question each time
     console.log("Displaying the question");
     showQuestionNumber();//potentially move this? should it be in displayQuestion or handleQuestion above submitAnswer? Or does it matter?
+    testFunction();
     return `
     <section class="question-box">
     <p class="instructions content">
     Instructions: Select the definition that best describes the word below.
     </p>
     <h2 class="word content">${item[questionIndex]["question"]}</h2>
-    <h3 class="in-a-sentence">In a sentence:</h3>
-    <section class="example content">
-        <blockquote class="sentence content">${item[questionIndex]["exampleSentence"]}</blockquote><cite class="source content">${item[questionIndex]["exampleSource"]}</cite>
+    <section class="in-a-sentence">
+        <h3>In a sentence:</h3>
+        <section class="example content">
+            <blockquote class="sentence content">${item[questionIndex]["exampleSentence"]}</blockquote><cite class="source content">${item[questionIndex]["exampleSource"]}</cite>
+        </section>
     </section>
-    <form id="question-form">
+    <form role="form" id="question-form">
         <ul class="answers content">
             <li>
                 <input type="radio" id="answerA" name="answer" value="${item[questionIndex]["answerOptions"][0]}"><label for="answerA">  ${item[questionIndex]["answerOptions"][0]}</label>
@@ -66,17 +70,23 @@ function displayQuestion(item) {
     //Note to self: this is messy to look at, find a way to clean up later
 }
 
+
+//not working right
+function testFunction() {
+    $('.in-a-sentence').html(`<p>This is a test paragraph</p>`);
+    console.log('the test function is working');
+}
+
 function correctFeedback() {
     $('#content-box').html(`<h3 class="correct-incorrect">Correct!</h3><p class="feedback"><span class="capitalize">${STORE[questionIndex]["question"]}</span> is defined as ${STORE[questionIndex]["correctAnswer"]}.
     
     <h3 class="in-a-sentence">In a sentence:</h3>
     <section class="example content">
         <blockquote class="sentence content">${STORE[questionIndex]["exampleSentence"]}</blockquote><cite class="source content">${STORE[questionIndex]["exampleSource"]}</cite></p></section>
-    <button class="Next">Next</button>`);
+    <button role="button" class="Next">Next</button>`);
     console.log('`correctFeedback` ran');
     changeScore();
     nextQuestion();
-    //note to self: expand upon this to give better feedback later.
 }
 
 function incorrectFeedback() {
@@ -85,10 +95,16 @@ function incorrectFeedback() {
     <h3 class="in-a-sentence">In a sentence:</h3>
     <section class="example content">
         <blockquote class="sentence content">${STORE[questionIndex]["exampleSentence"]}</blockquote><cite class="source content">${STORE[questionIndex]["exampleSource"]}</cite></p></section>
-    <button class="Next">Next</button>`);
-    console.log('`incorrectFeedback` ran');
+    <button role="button" class="Next">Next</button>`);
+    holdIncorrectAnswers();
     nextQuestion();
+    console.log('`incorrectFeedback` ran');
     //note to self: expand upon this to give better feedback later.
+}
+
+function holdIncorrectAnswers() {
+    incorrectAnswers.push(STORE[questionIndex]["question"]);
+    console.log('pushing to incorrect answers');
 }
 
 function displayFeedback() {
@@ -137,7 +153,7 @@ function showQuestionNumber() {
 
 function endQuiz() {
     //This function will be responsible for displaying end-of-quiz feedback and telling the user how to play again
-    $('#content-box').html(`<p>Your score is ${numberCorrect}/10</p><button class="restart">Start New Quiz</button>`);
+    $('#content-box').html(`<p>Your score is ${numberCorrect}/10</p><button role="button" class="restart">Start New Quiz</button>`);
     console.log('`endQuiz` ran');
     restartQuiz();
     return;
@@ -148,6 +164,7 @@ function restartQuiz() {
         questionIndex = 0;
         questionNumber = questionIndex + 1;
         numberCorrect = 0;
+        incorrectAnswers = [];
         const question = displayQuestion(STORE);
         $('#content-box').html(question);
         submitAnswer();

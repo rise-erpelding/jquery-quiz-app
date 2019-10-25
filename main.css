@@ -6,15 +6,17 @@ body * {
 }
 
 body {
-    color:#ccc;
+    color:#ccc; 
     background: black;
+    background-position: 55%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-image: 
     linear-gradient(
       rgba(0, 0, 0, 0.9),
       rgba(0, 0, 0, 0.9)
     ),
     url(book.jpg);
-    background-position: 55%;
 }
 
 #main {
@@ -35,13 +37,11 @@ ul, li {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/*not currently using*/
-.hidden {
-    display: none;
-}
 
 /* Question Number/Score styles */
-
+.question-data > ul {
+    text-align: center;
+}
 
 .question-data > li {
     display: inline-block;
@@ -50,12 +50,15 @@ ul, li {
 
 /* Title styles */
 header {
-    width: 300px;
+    width: 90%;
     padding: 15px 10px 10px 10px;
     border-bottom: 1px solid #0d0d0d;
     font-size: 20px;
     text-align: center;
-    color: #8c8c8c;
+}
+
+header > h1 {
+    color: #f2f2f2;
 }
 
 /* Start page styles: */
@@ -66,8 +69,8 @@ header {
 /* content box styles: */
 
 #content-box {
-    width: 300px;
-    height: 500px;
+    width: 90%;
+    height: 85%;
 }
 
 /* Question content styles (words and answers) */
@@ -84,7 +87,7 @@ header {
 }
 
 .question-data {
-    text-align: right;
+    text-align: center;
 }
 
 .answers {
@@ -101,6 +104,13 @@ header {
 
 
 /* Example sentence styles: */
+.in-a-sentence {
+    font-size: 13px;
+    text-align: left;
+    padding-top: 10px;
+    margin-left: 30px;
+}
+
 .example {
     padding: 5px 10px 5px 10px;
     margin: 8px 10px 20px 30px;
@@ -120,13 +130,6 @@ header {
     color: gray;
 }
 
-.in-a-sentence {
-    font-size: 13px;
-    text-align: left;
-    padding-top: 10px;
-    margin-left: 53px;
-}
-
 .source {
     font-size: 13px;
     color: #999;
@@ -140,8 +143,114 @@ header {
 
 .correct-incorrect {
     margin-top: 30px;
+    font-family: 'Reem Kufi', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-bottom: 30px;
 }
 
 .feedback {
     margin: 10px 10px 20px 10px;
+}
+
+
+/* Styles above for screens less than 540px wide and  height less than 600px*/
+
+
+/* For screens wider than 550px*/
+@media screen and (min-width: 550px) {
+    #content-box {
+        width: 70%;
+        height: 85%;
+        }
+
+    header {
+        width: 70%;
+        font-size: 22px;
+    }
+
+    .answers {
+        font-size: 17px;
+    }
+
+    .word {
+        font-size: 37px;
+    }
+
+    .instructions, .in-a-sentence, .source {
+        font-size: 15px;
+    }
+
+    .example {
+        font-size: 16px;
+    }
+
+    .correct-incorrect {
+        font-size: 22px;
+    }
+
+    .begin, .sbmt, .Next, .restart {
+        font-size: 15px;
+    }
+
+    .question-data {
+        font-size: 17px;
+    }
+
+
+}
+
+/* For screens wider than 800px*/
+@media screen and (min-width: 800px) {
+    #content-box {
+        width: 50%;
+        height: 85%;
+        }
+
+    header {
+        width: 50%;
+        font-size: 25px;
+    }
+
+    .answers {
+        font-size: 20px;
+    }
+
+    .word {
+        font-size: 40px;
+    }
+
+    .instructions, .in-a-sentence, .source {
+        font-size: 18px;
+    }
+
+    .example {
+        font-size: 19px;
+    }
+
+    .correct-incorrect {
+        font-size: 25px;
+    }
+
+    .begin, .sbmt, .Next, .restart {
+        font-size: 18px;
+    }
+
+    .question-data {
+        font-size: 20px;
+    }
+}
+
+/*For screens taller than 600px*/
+@media screen and (min-height: 600px) {
+    header {
+        padding-top: 50px;
+    }
+}
+
+/*For screens taller than 600px*/
+@media screen and (min-height: 700px) {
+    header {
+        padding-top: 100px;
+    }
 }
